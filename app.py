@@ -100,6 +100,7 @@ with chat_container:
 # Chat input and processing
 user_query = st.chat_input("Type your coding question here...")
 
+# Define generate ai response
 def generate_ai_response(prompt_chain):
     processing_pipeline=prompt_chain | llm_engine | StrOutputParser()
     return processing_pipeline.invoke({})
